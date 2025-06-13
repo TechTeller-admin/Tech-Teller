@@ -8,5 +8,15 @@
 <body>
   <h1>Welcome to TechTeller</h1>
   <p>Your daily source of high-profile tech reviews and news.</p>
+
+  <h2>Latest Articles:</h2>
+  <ul>
+    {% for article in articles %}
+      <li>
+        <a href="{{ article.link }}" target="_blank">{{ article.title }}</a>
+        <br><small>{{ article.timestamp }}</small>
+      </li>
+    {% endfor %}
+  </ul>
 </body>
 </html>
