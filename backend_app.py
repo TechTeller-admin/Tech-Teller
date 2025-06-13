@@ -1,9 +1,8 @@
+from flask import Flask, render_template
+from backend_routes_main import register_routes
 
-from flask import Flask
-from backend_routes_main import main_bp
+app = Flask(__name__, template_folder='templates', static_folder='static')
+register_routes(app)
 
-app = Flask(__name__, template_folder="frontend_templates", static_folder="frontend_static")
-app.register_blueprint(main_bp)
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+if __name__ == '__main__':
+    app.run()
