@@ -1,9 +1,8 @@
 from flask import Flask
-app = Flask(__name__)
+from backend_routes_main import main_bp
 
-@app.route('/')
-def home():
-    return 'TechTeller Backend Running'
+app = Flask(__name__, template_folder='frontend_templates', static_folder='frontend_static')
+app.register_blueprint(main_bp)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
